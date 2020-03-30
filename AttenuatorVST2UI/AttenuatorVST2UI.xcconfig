@@ -1,0 +1,27 @@
+//
+//  AttenuatorVST2UI.xcconfig
+//  AttenuatorVST2
+//
+//  Created by Vlad Gorlov on 30.03.20.
+//  Copyright © 2020 Vlad Gorlov. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+INFOPLIST_FILE = AttenuatorVST2UI/Info.plist
+PRODUCT_BUNDLE_IDENTIFIER = abc.example.AttenuatorVST2UI
+PRODUCT_NAME = $(TARGET_NAME:c99extidentifier)
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+
+CODE_SIGN_STYLE = Automatic
+SWIFT_INSTALL_OBJC_HEADER = YES
+DEFINES_MODULE = YES
+SWIFT_VERSION = 5.0
+
+COMBINE_HIDPI_IMAGES = YES
+SKIP_INSTALL = YES
+DYLIB_COMPATIBILITY_VERSION = 1
+DYLIB_CURRENT_VERSION = 1
+DYLIB_INSTALL_NAME_BASE = @rpath
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @loader_path/Frameworks

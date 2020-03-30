@@ -42,6 +42,7 @@ public:
    virtual VstPlugCategory getPlugCategory () { return kPlugCategEffect; }
    
 private:
+   bool mIsUpdatingGain; // 1️⃣ Used to avoid parameter change loopback.
    float mGain;
    char programName[kVstMaxProgNameLen + 1];
 };

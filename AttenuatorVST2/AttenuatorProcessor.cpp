@@ -7,6 +7,7 @@
 //
 
 #include "AttenuatorProcessor.hpp"
+#include "AttenuatorEditor.hpp" // 1️⃣ Imported new header.
 
 AudioEffect* createEffectInstance(audioMasterCallback audioMaster) {
    return new AttenuatorProcessor(audioMaster);
@@ -22,6 +23,8 @@ AttenuatorProcessor::AttenuatorProcessor(audioMasterCallback audioMaster)
    
    mGain = 1.f;           // default to 0 dB
    vst_strncpy(programName, "Default", kVstMaxProgNameLen);   // default program name
+   
+   this->setEditor (new AttenuatorEditor(this)); // 2️⃣ Using editor.
 }
 
 AttenuatorProcessor::~AttenuatorProcessor() {
@@ -71,10 +74,16 @@ void AttenuatorProcessor::getProgramName (char* name) {
 
 void AttenuatorProcessor::setParameter (VstInt32 index, float value) {
    mGain = value;
+   bool shouldUpdate = editor && editor->isOpen() && !mIsUpdatingGain;
+   if(shouldUpdate) {
+      ((AttenuatorEditor *)editor)->setParameter(index, value); // 4️⃣ Updating UI from VST Host.
+   }
 }
 
 void AttenuatorProcessor::setParameterAutomated (VstInt32 index, float value) {
+   mIsUpdatingGain = true; // 3️⃣ Needed to avoid loopback.
    AudioEffectX::setParameterAutomated(index, value);
+   mIsUpdatingGain = false; // 3️⃣ Needed to avoid loopback.
 }
 
 float AttenuatorProcessor::getParameter (VstInt32 index) {
