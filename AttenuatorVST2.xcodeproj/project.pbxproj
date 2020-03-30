@@ -47,6 +47,15 @@
 		802922FC243229A300BD7433 /* AttenuatorVST2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AttenuatorVST2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		802922FD24322A9A00BD7433 /* MainUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUI.swift; sourceTree = "<group>"; };
 		802922FF2432328E00BD7433 /* AttenuatorVST2UI.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AttenuatorVST2UI.xcconfig; sourceTree = "<group>"; };
+		8029230324323FD600BD7433 /* vstfxstore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vstfxstore.h; sourceTree = "<group>"; };
+		8029230424323FD600BD7433 /* aeffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aeffect.h; sourceTree = "<group>"; };
+		8029230524323FD600BD7433 /* aeffectx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aeffectx.h; sourceTree = "<group>"; };
+		8029230924323FD600BD7433 /* audioeffectx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audioeffectx.h; sourceTree = "<group>"; };
+		8029230A24323FD600BD7433 /* audioeffect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = audioeffect.cpp; sourceTree = "<group>"; };
+		8029230B24323FD600BD7433 /* audioeffectx.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = audioeffectx.cpp; sourceTree = "<group>"; };
+		8029230C24323FD600BD7433 /* aeffeditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aeffeditor.h; sourceTree = "<group>"; };
+		8029230D24323FD600BD7433 /* vstplugmain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vstplugmain.cpp; sourceTree = "<group>"; };
+		8029230E24323FD600BD7433 /* audioeffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audioeffect.h; sourceTree = "<group>"; };
 		808BBC7D2431F41F0053814A /* AttenuatorVST2.vst */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AttenuatorVST2.vst; sourceTree = BUILT_PRODUCTS_DIR; };
 		808BBC802431F41F0053814A /* AttenuatorVST2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttenuatorVST2.h; sourceTree = "<group>"; };
 		808BBC812431F41F0053814A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,12 +91,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8029230024323FA600BD7433 /* VST SDK */ = {
+			isa = PBXGroup;
+			children = (
+				8029230124323FD600BD7433 /* pluginterfaces */,
+				8029230624323FD600BD7433 /* public.sdk */,
+			);
+			name = "VST SDK";
+			sourceTree = VST2_SDK;
+		};
+		8029230124323FD600BD7433 /* pluginterfaces */ = {
+			isa = PBXGroup;
+			children = (
+				8029230224323FD600BD7433 /* vst2.x */,
+			);
+			path = pluginterfaces;
+			sourceTree = "<group>";
+		};
+		8029230224323FD600BD7433 /* vst2.x */ = {
+			isa = PBXGroup;
+			children = (
+				8029230324323FD600BD7433 /* vstfxstore.h */,
+				8029230424323FD600BD7433 /* aeffect.h */,
+				8029230524323FD600BD7433 /* aeffectx.h */,
+			);
+			path = vst2.x;
+			sourceTree = "<group>";
+		};
+		8029230624323FD600BD7433 /* public.sdk */ = {
+			isa = PBXGroup;
+			children = (
+				8029230724323FD600BD7433 /* source */,
+			);
+			path = public.sdk;
+			sourceTree = "<group>";
+		};
+		8029230724323FD600BD7433 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				8029230824323FD600BD7433 /* vst2.x */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		8029230824323FD600BD7433 /* vst2.x */ = {
+			isa = PBXGroup;
+			children = (
+				8029230924323FD600BD7433 /* audioeffectx.h */,
+				8029230A24323FD600BD7433 /* audioeffect.cpp */,
+				8029230B24323FD600BD7433 /* audioeffectx.cpp */,
+				8029230C24323FD600BD7433 /* aeffeditor.h */,
+				8029230D24323FD600BD7433 /* vstplugmain.cpp */,
+				8029230E24323FD600BD7433 /* audioeffect.h */,
+			);
+			path = vst2.x;
+			sourceTree = "<group>";
+		};
 		808BBC732431F41F0053814A = {
 			isa = PBXGroup;
 			children = (
 				802922FC243229A300BD7433 /* AttenuatorVST2.playground */,
 				808BBC7F2431F41F0053814A /* AttenuatorVST2 */,
 				808BBC8E2431F46A0053814A /* AttenuatorVST2UI */,
+				8029230024323FA600BD7433 /* VST SDK */,
 				808BBC7E2431F41F0053814A /* Products */,
 				808BBD2F2431F9940053814A /* Frameworks */,
 			);
