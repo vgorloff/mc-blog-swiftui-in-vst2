@@ -12,6 +12,11 @@
 		808BBD2C2431F9400053814A /* AttenuatorVST2UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 808BBC8D2431F46A0053814A /* AttenuatorVST2UI.framework */; };
 		808BBD2E2431F9870053814A /* AttenuatorVST2UI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 808BBC8D2431F46A0053814A /* AttenuatorVST2UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		808BBD312431F9940053814A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 808BBD302431F9940053814A /* Cocoa.framework */; };
+		808BBD34243200D00053814A /* AttenuatorProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 808BBD32243200D00053814A /* AttenuatorProcessor.cpp */; };
+		808BBD35243200D00053814A /* AttenuatorProcessor.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 808BBD33243200D00053814A /* AttenuatorProcessor.hpp */; };
+		808BBD38243200E50053814A /* AttenuatorEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 808BBD36243200E50053814A /* AttenuatorEditor.cpp */; };
+		808BBD39243200E50053814A /* AttenuatorEditor.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 808BBD37243200E50053814A /* AttenuatorEditor.hpp */; };
+		808BBD3B243201D20053814A /* vst2sdk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 808BBD3A243201D20053814A /* vst2sdk.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,13 +43,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		808BBC7D2431F41F0053814A /* AttenuatorVST2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AttenuatorVST2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		808BBC7D2431F41F0053814A /* AttenuatorVST2.vst */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AttenuatorVST2.vst; sourceTree = BUILT_PRODUCTS_DIR; };
 		808BBC802431F41F0053814A /* AttenuatorVST2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttenuatorVST2.h; sourceTree = "<group>"; };
 		808BBC812431F41F0053814A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		808BBC8D2431F46A0053814A /* AttenuatorVST2UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AttenuatorVST2UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		808BBC8F2431F46A0053814A /* AttenuatorVST2UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttenuatorVST2UI.h; sourceTree = "<group>"; };
 		808BBC902431F46A0053814A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		808BBD302431F9940053814A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		808BBD32243200D00053814A /* AttenuatorProcessor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AttenuatorProcessor.cpp; sourceTree = "<group>"; };
+		808BBD33243200D00053814A /* AttenuatorProcessor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AttenuatorProcessor.hpp; sourceTree = "<group>"; };
+		808BBD36243200E50053814A /* AttenuatorEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AttenuatorEditor.cpp; sourceTree = "<group>"; };
+		808BBD37243200E50053814A /* AttenuatorEditor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AttenuatorEditor.hpp; sourceTree = "<group>"; };
+		808BBD3A243201D20053814A /* vst2sdk.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vst2sdk.cpp; sourceTree = "<group>"; };
+		808BBD3C243205260053814A /* AttenuatorVST2.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AttenuatorVST2.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +91,7 @@
 		808BBC7E2431F41F0053814A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				808BBC7D2431F41F0053814A /* AttenuatorVST2.framework */,
+				808BBC7D2431F41F0053814A /* AttenuatorVST2.vst */,
 				808BBC8D2431F46A0053814A /* AttenuatorVST2UI.framework */,
 			);
 			name = Products;
@@ -91,6 +102,12 @@
 			children = (
 				808BBC802431F41F0053814A /* AttenuatorVST2.h */,
 				808BBC812431F41F0053814A /* Info.plist */,
+				808BBD32243200D00053814A /* AttenuatorProcessor.cpp */,
+				808BBD33243200D00053814A /* AttenuatorProcessor.hpp */,
+				808BBD36243200E50053814A /* AttenuatorEditor.cpp */,
+				808BBD37243200E50053814A /* AttenuatorEditor.hpp */,
+				808BBD3A243201D20053814A /* vst2sdk.cpp */,
+				808BBD3C243205260053814A /* AttenuatorVST2.xcconfig */,
 			);
 			path = AttenuatorVST2;
 			sourceTree = "<group>";
@@ -119,6 +136,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				808BBD35243200D00053814A /* AttenuatorProcessor.hpp in Headers */,
+				808BBD39243200E50053814A /* AttenuatorEditor.hpp in Headers */,
 				808BBC822431F41F0053814A /* AttenuatorVST2.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,8 +170,8 @@
 			);
 			name = AttenuatorVST2;
 			productName = AttenuatorVST2;
-			productReference = 808BBC7D2431F41F0053814A /* AttenuatorVST2.framework */;
-			productType = "com.apple.product-type.framework";
+			productReference = 808BBC7D2431F41F0053814A /* AttenuatorVST2.vst */;
+			productType = "com.apple.product-type.bundle";
 		};
 		808BBC8C2431F46A0053814A /* AttenuatorVST2UI */ = {
 			isa = PBXNativeTarget;
@@ -230,6 +249,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				808BBD34243200D00053814A /* AttenuatorProcessor.cpp in Sources */,
+				808BBD38243200E50053814A /* AttenuatorEditor.cpp in Sources */,
+				808BBD3B243201D20053814A /* vst2sdk.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,45 +390,15 @@
 		};
 		808BBC862431F41F0053814A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 808BBD3C243205260053814A /* AttenuatorVST2.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AttenuatorVST2/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = abc.example.AttenuatorVST2;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 		808BBC872431F41F0053814A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 808BBD3C243205260053814A /* AttenuatorVST2.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AttenuatorVST2/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = abc.example.AttenuatorVST2;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
